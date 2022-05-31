@@ -6,6 +6,11 @@ body {
   background: #fafafa;
 }
 
+main {
+  position: relative;
+  top: -58px;
+}
+
 /*----------------------------
       header section
 ----------------------------*/
@@ -79,8 +84,23 @@ body {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
-  margin: 24px 24px 0;
+  margin: 0 24px 0;
+  padding: 52px 24px 40px;
   z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  &__logo-mc {
+    position: absolute;
+    top: -28px;
+    width: unset;
+    // left: calc(50% - 12.8vw);
+    
+
+  }
 
   &__heading {
     font-size: 20px;
@@ -94,11 +114,18 @@ body {
 
   &__paragraph {
     text-align: center;
+    margin: 16px 0 24px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
   }
 
   &__button-cyan {
     background: $moderate-cyan;
-    width: clamp(214px, 57.0666666667vw, 57.0666666667vw);
+    width: clamp(57.0666666667vw, 57.0666666667vw, 57.0666666667vw);
   }
 }
 
