@@ -122,6 +122,8 @@ main {
   &__button-cyan {
     background: $moderate-cyan;
     width: clamp(57.0666666667vw, 57.0666666667vw, 57.0666666667vw);
+    font-size: 16px;
+    padding: 18px 0;
   }
 }
 
@@ -145,32 +147,31 @@ main {
 
   &__heading {
     font-size: 32px;
-    font-weight: 700;
     line-height: 39px;
   }
 
   &__label {
-    margin: 4px 0 21px ;
+    margin: 4px 0 21px;
   }
 
   &__transition {
     border: none;
-    border-top: 1px solid hsla(0, 0%, 0%, 0.15) ;
+    border-top: 1px solid hsla(0, 0%, 0%, 0.15);
     width: clamp(80px, 21.3333333333vw, 21.3333333333vw);
   }
 
- &__progress-bar {
-   height: 12px;
-   background: hsla(0, 0%, 18%, 0.05);
-   border-radius: 33.5px;
- }
+  &__progress-bar {
+    height: 12px;
+    background: hsla(0, 0%, 18%, 0.05);
+    border-radius: 33.5px;
+  }
 
- &__pb-value {
-   border-radius: 33.5px;
-   width: 78.23%; //visual progress doesn't match actual ratio (78.23% rather than 89.9%) 
-   background: #3CB3AB;
-   height: 12px;
- }
+  &__pb-value {
+    border-radius: 33.5px;
+    width: 78.23%; //visual progress doesn't match actual ratio (78.23% rather than 89.9%)
+    background: #3cb3ab;
+    height: 12px;
+  }
 }
 
 /*----------------------------
@@ -182,5 +183,64 @@ main {
   &__paragraph {
     margin: 24px 0 20px;
   }
-}
 
+  &__rewards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__reward {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  &__reward--mahogany {
+    opacity: 0.5;
+  }
+
+  &__heading--four {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__pledge {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: $moderate-cyan;
+    margin: 8px 0 24px;
+  }
+
+  &__items-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 0 24px;
+  }
+  &__quantity {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+  }
+
+  &__left {
+    font-size: 15px;
+    line-height: 18px;
+    color: $dark-gray;
+  }
+
+  &__button {
+    background: $moderate-cyan;
+    width: clamp(157px, 41.8666666667vw, 41.8666666667vw);
+    font-size: 14px;
+    padding: 14px 0;
+  }
+
+  &__button--mahogany {
+    background: #2f2f2f;
+    opacity: 0.5;
+  }
+}
