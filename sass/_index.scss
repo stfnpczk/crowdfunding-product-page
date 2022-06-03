@@ -24,14 +24,34 @@ main {
   background-size: 100%;
   // background-size: cover;
   height: clamp(236px, 62.9333333333vw, 336px);
+  
 
   &__navigation {
     display: none;
+
+    @media only screen and (min-width: $tablet) {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 16px;
+      color: white;
+    }
+  }
+
+  &__nav-items {
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+      gap: 32px;
+    }
   }
 
   &__hamburger {
     position: relative;
     border: none;
+
+    @media only screen and (min-width: $tablet) {
+      display: none;
+    }
   }
 
   &__hamburger-icon,
