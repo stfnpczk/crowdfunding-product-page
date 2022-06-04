@@ -24,7 +24,6 @@ main {
   background-size: 100%;
   // background-size: cover;
   height: clamp(236px, 62.9333333333vw, 336px);
-  
 
   &__navigation {
     display: none;
@@ -144,6 +143,28 @@ main {
     width: clamp(57.0666666667vw, 57.0666666667vw, 57.0666666667vw);
     font-size: 16px;
     padding: 18px 0;
+  }
+
+  &__bookmark {
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+      background: rgba(47, 47, 47, 0.05);
+      border-radius: 33.5px;
+      width: 174px;
+    }
+  }
+
+  &__bookmark-txt {
+    display: none;
+
+    @media only screen and (min-width: $tablet) {
+      display: block;
+      font-weight: 700;
+      line-height: 20px;
+      color: $dark-gray;
+      padding-left: 16px;
+    }
   }
 }
 
