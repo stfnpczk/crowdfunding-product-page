@@ -184,6 +184,18 @@ main {
     display: flex;
     flex-direction: column;
     gap: 18px;
+
+    @media only screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+
+  @media only screen and (min-width: $tablet) {
+    &__container li:not(:last-child) {
+      border-right: 1px solid hsla(0, 0%, 0%, 0.15);
+      height: 63px;
+      padding-right: 42px;
+    }
   }
 
   &__heading {
@@ -192,19 +204,25 @@ main {
   }
 
   &__label {
-    margin: 4px 0 21px;
+    // margin: 4px 0 21px;
+    margin: 4px 0 0;
   }
 
   &__transition {
     border: none;
     border-top: 1px solid hsla(0, 0%, 0%, 0.15);
     width: clamp(80px, 21.3333333333vw, 21.3333333333vw);
+
+    @media only screen and (min-width: $tablet) {
+      display: none;
+    }
   }
 
   &__progress-bar {
     height: 12px;
     background: hsla(0, 0%, 18%, 0.05);
     border-radius: 33.5px;
+    margin: 21px 0 0;
   }
 
   &__pb-value {
