@@ -256,6 +256,13 @@ main {
     padding: 24px;
   }
 
+  &__row {
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__reward--mahogany {
     opacity: 0.5;
   }
@@ -271,6 +278,16 @@ main {
     line-height: 17px;
     color: $moderate-cyan;
     margin: 8px 0 24px;
+
+    @media only screen and (min-width: $tablet) {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__row--two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__items-left {
