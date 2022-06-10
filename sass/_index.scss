@@ -128,7 +128,6 @@ main {
   border-radius: 8px;
   // margin: 0 24px 0;
   padding: 52px 24px 40px;
-  // z-index: 1;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -370,5 +369,95 @@ main {
   &__button--mahogany {
     background: #2f2f2f;
     opacity: 0.5;
+  }
+}
+
+/*----------------------------
+      modal section 
+----------------------------*/
+.modal {
+  position: fixed;
+  top: 0;
+  background: hsla(0, 0%, 0%, 0.5);
+  min-height: 100vh;
+  height: 100%;
+  width: 100%; //auto
+  overflow-y: auto;
+  // z-index: 4;
+
+  .modal__form {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+    border-radius: 8px;
+    padding: 32px 24px;
+    margin: 121px 24px 0;
+    // height: 1359px ;
+    // z-index: 5;
+  }
+
+  &__row-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__paragraph--intro {
+    margin: 24px 0;
+  }
+
+  &__reward-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__reward {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 32px 24px;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+  }
+
+  &__label span {
+    display: block;
+    color: $moderate-cyan;
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+  }
+
+  &__paragraph--reward {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 20px 0 0;
+  }
+
+  &__days-left {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $black;
+    margin: 24px 0 0;
+  }
+  
+  &__days-left span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $dark-gray;
+    margin-left: 8px;
   }
 }
