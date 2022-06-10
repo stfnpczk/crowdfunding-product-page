@@ -2,7 +2,7 @@
       layout
  ----------------------------*/
 
-body {
+ body {
   background: #fafafa;
 }
 
@@ -126,7 +126,7 @@ main {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
-  margin: 0 24px 0;
+  // margin: 0 24px 0;
   padding: 52px 24px 40px;
   // z-index: 1;
   position: relative;
@@ -136,7 +136,7 @@ main {
 
   @media only screen and (min-width: $desktop) {
     // align-items: unset;
-    padding: 56px 48px 48px ;
+    padding: 56px 48px 48px;
   }
 
   &__logo-mc {
@@ -221,7 +221,7 @@ main {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
-  margin: 24px;
+  margin: 24px 0 24px;
   // margin-top: 24px;
   padding: 31px 24px 40px;
   text-align: center;
@@ -331,9 +331,11 @@ main {
   }
 
   &__row--two {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media only screen and (min-width: $desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__items-left {

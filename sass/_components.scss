@@ -6,8 +6,6 @@
   //   width: clamp(171px, 45.6vw, 45.6vw);
   justify-content: center;
 
-  
-  
   font-weight: 700;
   line-height: 20px;
   color: $white;
@@ -15,7 +13,8 @@
   transition: 0.3s ease-in;
 }
 
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: not-allowed;
 }
 
@@ -23,5 +22,5 @@ button[disabled], html input[disabled] {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
-  margin: 24px;
+  margin: 24px 0 24px;
 }
