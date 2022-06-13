@@ -2,7 +2,7 @@
       layout
  ----------------------------*/
 
-body {
+ body {
   background: #fafafa;
   overflow: hidden;
 }
@@ -498,18 +498,37 @@ main {
   &__pledge-container {
     margin: 24.5px 0 0;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
-    width: 100%;
+    // width: 100%;
+
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 28px 0;
+    
+    }
   }
 
   &__text {
     margin: 24px 0 16px;
     text-align: center;
+
+    @media only screen and (min-width: $tablet) {
+      text-align: left;
+      margin: 0;
+      // padding: 24px 0 0;
+    }
   }
 
   &__inputs {
     display: flex;
     justify-content: center;
     gap: 16px;
+
+    @media only screen and (min-width: $tablet) {
+      align-self: center;
+
+    }
   }
 
   &__input {
