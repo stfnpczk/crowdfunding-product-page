@@ -2,9 +2,9 @@
       layout
  ----------------------------*/
 
- body {
+body {
   background: #fafafa;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 main {
@@ -377,10 +377,11 @@ main {
       modal section 
 ----------------------------*/
 .modal {
-  position: fixed;
+  // display: none;
+  // position: fixed;
   top: 0;
   background: hsla(0, 0%, 0%, 0.5);
-  min-height: 100vh;
+  // min-height: 100vh;
   height: 100%;
   width: 100%; //auto
   overflow-y: auto;
@@ -388,9 +389,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   // z-index: 4;
 
   &__form {
+    display: none;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.0497193);
     border-radius: 8px;
@@ -405,19 +408,23 @@ main {
     }
 
     @media only screen and (min-width: $desktop) {
-      padding: 48px clamp(30px, 6.1696658098vw, 48px) ;
+      padding: 48px clamp(30px, 6.1696658098vw, 48px);
     }
 
     @media only screen and (min-width: $desktop) {
       max-width: 875px;
       margin: 184px clamp(48px, 6vw, 48px) 0;
-
     }
   }
 
   &__row-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__heading {
+    font-size: 18px;
+    line-height: 22px;
   }
 
   &__paragraph--intro {
@@ -519,7 +526,6 @@ main {
       justify-content: space-between;
       align-items: center;
       padding: 24px 28px 0;
-    
     }
   }
 
@@ -541,7 +547,6 @@ main {
 
     @media only screen and (min-width: $tablet) {
       align-self: center;
-
     }
   }
 
@@ -580,9 +585,41 @@ main {
     line-height: 17px;
     letter-spacing: 0px;
   }
-}
 
-modal__pledge-container::after {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  width: 100%;
+  &__success {
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background: #ffffff;
+    // border: 1px solid rgba(0, 0, 0, 0.0497193);
+    // border-radius: 8px;
+    padding: 32px 24px 40.5px;
+    margin: 0 24px;
+
+    img {
+      width: 64px;
+    }
+
+    max-width: 488px;
+  }
+
+  &__heading--success {
+    margin: 24px 0;
+  }
+
+  &__paragraph--success {
+    text-align: center;
+    margin: 0 0 31.5px;
+  }
+
+  &__button--success {
+    background: $moderate-cyan;
+    width: 107px;
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
+  }
 }
