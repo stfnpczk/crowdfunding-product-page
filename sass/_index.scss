@@ -384,9 +384,13 @@ main {
   height: 100%;
   width: 100%; //auto
   overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   // z-index: 4;
 
-  .modal__form {
+  &__form {
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.0497193);
     border-radius: 8px;
@@ -398,6 +402,16 @@ main {
     @media only screen and (min-width: $tablet) {
       margin: 184px clamp(64px, 10vw, 355px) 0;
       padding: 48px 30px;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      padding: 48px clamp(30px, 6.1696658098vw, 48px) ;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      max-width: 875px;
+      margin: 184px clamp(48px, 6vw, 48px) 0;
+
     }
   }
 
