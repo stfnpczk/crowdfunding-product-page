@@ -33,10 +33,11 @@ main {
   background-size: 100%;
   // background-size: cover;
   height: clamp(236px, 62.9333333333vw, 336px);
+  align-items: baseline;
   // height: clamp(236px, 62.9333333333vw, 336px);
 
   @media only screen and (min-width: 800px) {
-    justify-content: space-around;
+    // justify-content: space-around;
     background: url(../images/image-hero-desktop.jpg) no-repeat;
     height: 400px;
 
@@ -51,6 +52,23 @@ main {
 
   &__navigation {
     display: none;
+    // display: block;
+    // position: absolute;
+    // top: 88px;
+    // // left: 24px;
+    // width: calc(100% - 48px);
+    // // text-align: center;
+    // background: $white;
+
+    // color: $black;
+    // font-size: 18px;
+    // font-weight: 500;
+    // line-height: 22px;
+
+    // height: 212px;
+    // padding: 24px;
+    // transition: 0.3s ease-in;
+    // z-index: 1;
 
     @media only screen and (min-width: $tablet) {
       display: block;
@@ -61,16 +79,47 @@ main {
     }
   }
 
+  &__navigation--open {
+    display: block;
+  }
+
   &__nav-items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: $white;
+    left: 24px;
+    top: 88px;
+    width: calc(100% - 48px);
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+    border-radius: 8px;
+    z-index: 2;
+
     @media only screen and (min-width: $tablet) {
+      all: unset;
+      list-style-type: none;
       display: flex;
       gap: 32px;
     }
   }
 
+  &__nav-item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    padding: 24px;
+  }
+
+  &__nav-items li:not(:last-child) {
+    border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+  }
+
   &__hamburger {
-    position: relative;
+    display: block;
+    position: absolute;
+    right: 24px;
     border: none;
+    z-index: 5;
 
     @media only screen and (min-width: $tablet) {
       display: none;
@@ -102,16 +151,16 @@ main {
     top: 5px;
   }
 
-  &__hamburger-active &__hamburger-icon {
+  &__hamburger--active &__hamburger-icon {
     transform: rotate(-135deg);
   }
 
-  &__hamburger-active &__hamburger-icon:before,
-  &__hamburger-active &__hamburger-icon:after {
+  &__hamburger--active &__hamburger-icon:before,
+  &__hamburger--active &__hamburger-icon:after {
     top: 0;
   }
 
-  &__hamburger-active &__hamburger-icon:before {
+  &__hamburger--active &__hamburger-icon:before {
     transform: rotate(90deg);
   }
 }
@@ -377,19 +426,18 @@ main {
       modal section 
 ----------------------------*/
 .modal {
-  // display: none;
   // position: fixed;
-  top: 0;
-  background: hsla(0, 0%, 0%, 0.5);
-  // min-height: 100vh;
-  height: 100%;
-  width: 100%; //auto
-  overflow-y: auto;
+  // top: 0;
+  // background: hsla(0, 0%, 0%, 0.5);
+  // // min-height: 100vh;
+  // height: 100%;
+  // width: 100%; //auto
+  // overflow-y: auto;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
   // z-index: 4;
 
   &__form {
@@ -621,5 +669,23 @@ main {
     font-weight: 700;
     line-height: 17px;
     text-align: center;
+  }
+}
+
+.overlay {
+  // position: fixed;
+  top: 0;
+  background: hsla(0, 0%, 0%, 0.5);
+  // min-height: 100vh;
+  height: 100%;
+  width: 100%; //auto
+  overflow-y: auto;
+
+}
+
+.overlay--active {
+  position: fixed;
+  @media only screen and (min-width: $tablet) {
+    position: unset;
   }
 }
