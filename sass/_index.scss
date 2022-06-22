@@ -33,7 +33,7 @@ main {
   background-size: 100%;
   // background-size: cover;
   height: clamp(236px, 62.9333333333vw, 336px);
-  align-items: baseline;
+  // align-items: baseline;
   // height: clamp(236px, 62.9333333333vw, 336px);
 
   @media only screen and (min-width: 800px) {
@@ -44,6 +44,18 @@ main {
     // background-size: 100%;
     max-width: 1392px;
     margin: 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    z-index: 5;
+
+    @media only screen and (min-width: $tablet) {
+      width: unset;
+    }
   }
 
   // @media only screen and (min-width: 1440px) {
@@ -108,16 +120,24 @@ main {
     font-weight: 500;
     line-height: 22px;
     padding: 24px;
+
+    @media only screen and (min-width: $tablet) {
+      padding: 0;
+    }
   }
 
   &__nav-items li:not(:last-child) {
     border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+
+    @media only screen and (min-width: $tablet) {
+      border: none;
+    }
   }
 
   &__hamburger {
     display: block;
     position: absolute;
-    right: 24px;
+    right: 0;
     border: none;
     z-index: 5;
 
@@ -246,9 +266,25 @@ main {
       align-items: center;
       background: rgba(47, 47, 47, 0.05);
       border-radius: 33.5px;
-      width: 174px;
+      // width: 174px;
+      width: 190px;
     }
   }
+
+  
+   
+&__bookmark--set &__bookmark-txt {
+  color: #147A73;
+}
+
+&__bookmark--set svg {
+  circle {
+    fill: #147A73;
+  }
+  path {
+    fill: $white;
+  }
+}
 
   &__bookmark-txt {
     display: none;

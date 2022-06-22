@@ -19,16 +19,18 @@
     <div class="page-wrapper">
       <header class="header">
         <!-- <img src="./images/image-hero-mobile.jpg" alt=""> -->
-        <a class="header__logo" href="#" aria-label="Return to home">
-          <img src="./images/logo.svg" alt="" />
-        </a>
-        <button
-          class="header__hamburger"
-          id="hamburger"
-          aria-label="open navigation menu"
-        >
-          <span class="header__hamburger-icon"></span>
-        </button>
+        <div class="header__container">
+          <a class="header__logo" href="#" aria-label="Return to home">
+            <img src="./images/logo.svg" alt="" />
+          </a>
+          <button
+            class="header__hamburger"
+            id="hamburger"
+            aria-label="open navigation menu"
+          >
+            <span class="header__hamburger-icon"></span>
+          </button>
+        </div>
         <nav class="header__navigation" id="mobile-nav">
           <ul class="header__nav-items">
             <li class="header__nav-item">
@@ -60,7 +62,7 @@
           </p>
           <div class="intro__buttons">
             <button class="button intro__button-cyan">Back this project</button>
-            <button class="intro__bookmark">
+            <button class="intro__bookmark" id="bookmark">
               <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
                   <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
@@ -351,9 +353,7 @@
         </div>
       </div>
 
-      <div class="overlay" id="overlay">
-
-      </div>
+      <div class="overlay" id="overlay"></div>
 
       <footer></footer>
     </div>
