@@ -51,18 +51,21 @@ a {
 }
 
 input[type="radio"] {
-  -webkit-appearance: none;
+  display: grid;
+  // -webkit-appearance: none;
+  place-content: center;
   appearance: none;
   background-color: #fff;
   margin: 0;
-
-  font: inherit;
+  color: rgb(0, 0, 0, 0.15);
+  // font: inherit;
   width: 24px;
   height: 24px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 50%;
   display: grid;
   place-content: center;
+  cursor: pointer;
 }
 
 input[type="radio"]::before {
@@ -77,4 +80,10 @@ input[type="radio"]::before {
 
 input[type="radio"]:checked::before {
   transform: scale(1);
+}
+
+
+
+input[type="text"]:focus {
+	border: none;
 }

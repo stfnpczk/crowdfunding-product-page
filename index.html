@@ -61,7 +61,7 @@
             strain.
           </p>
           <div class="intro__buttons">
-            <button class="button intro__button-cyan">Back this project</button>
+            <button class="button intro__button-cyan select">Back this project</button>
             <button class="intro__bookmark" id="bookmark">
               <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -129,7 +129,7 @@
                   <span class="about__quantity">101</span>
                   <span class="about__left">left</span>
                 </div>
-                <button class="button about__button">Select Reward</button>
+                <button class="button about__button select">Select Reward</button>
               </div>
             </li>
 
@@ -148,7 +148,7 @@
                   <span class="about__quantity">64</span>
                   <span class="about__left">left</span>
                 </div>
-                <button class="button about__button">Select Reward</button>
+                <button class="button about__button select">Select Reward</button>
               </div>
             </li>
 
@@ -179,11 +179,11 @@
         </section>
       </main>
 
-      <div class="modal">
-        <form class="modal__form" action="#">
+      <div class="modal" id="modal">
+        <form class="modal__form" id="form" action="#">
           <div class="modal__row-container">
             <h3 class="modal__heading">Back this project</h3>
-            <button>
+            <button id="close-button">
               <img src="./images/icon-close-modal.svg" alt="" />
             </button>
           </div>
@@ -200,8 +200,7 @@
                     class="modal__radio-button"
                     type="radio"
                     id="noReward"
-                    value=""
-                    checked
+                    name="select"
                   />
                   <label class="modal__label" for="noReward"
                     >Pledge with no Reward
@@ -222,7 +221,7 @@
                     <span>$</span>
                     <input
                       class="modal__pledge-input"
-                      type="number"
+                      type=""
                       id="aamount-noReward"
                       value="5"
                       min="1"
@@ -240,8 +239,7 @@
                     class="modal__radio-button"
                     type="radio"
                     id="bamboo"
-                    value=""
-                  />
+                    name="select"
                   <label class="modal__label" for="bamboo"
                     >Bamboo Stand <span>Pledge $25 or more</span></label
                   >
@@ -280,7 +278,7 @@
                     class="modal__radio-button"
                     type="radio"
                     id="black"
-                    value=""
+                    name="select"
                   />
                   <label class="modal__label" for="black"
                     >Black Edition stand <span>Pledge $75 or more</span></label
@@ -320,7 +318,6 @@
                     class="modal__radio-button"
                     type="radio"
                     id="mahogany"
-                    value=""
                     disabled
                   />
                   <label class="modal__label" for="mahogany"
