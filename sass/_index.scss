@@ -275,20 +275,18 @@ main {
     }
   }
 
-  
-   
-&__bookmark--set &__bookmark-txt {
-  color: #147A73;
-}
+  &__bookmark--set &__bookmark-txt {
+    color: #147a73;
+  }
 
-&__bookmark--set svg {
-  circle {
-    fill: #147A73;
+  &__bookmark--set svg {
+    circle {
+      fill: #147a73;
+    }
+    path {
+      fill: $white;
+    }
   }
-  path {
-    fill: $white;
-  }
-}
 
   &__bookmark-txt {
     display: none;
@@ -363,7 +361,7 @@ main {
   &__pb-value {
     border-radius: 33.5px;
     width: 78.23%; //visual progress doesn't match actual ratio (78.23% rather than 89.9%)
-    background: #3cb3ab;
+    background: $moderate-cyan;
     height: 12px;
   }
 }
@@ -614,12 +612,14 @@ main {
   }
 
   &__pledge-container {
+    display: none;
+    flex-direction: column;
     margin: 24.5px 0 0;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     // width: 100%;
 
     @media only screen and (min-width: $tablet) {
-      display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
       padding: 24px 28px 0;
@@ -652,9 +652,9 @@ main {
     // justify-content: center;
     gap: 5px;
     border-radius: 33.5px;
-    padding: 11px 24px;
+    padding: 11px 2px 11px 24px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    width: 50px;
+    width: 72px;
 
     font-size: 14px;
     line-height: 17px;
@@ -670,7 +670,8 @@ main {
 
   &__pledge-input {
     border: none;
-    width: 60%;
+    // width: 60%;
+    width: 100%;
     font-weight: 700;
   }
 
@@ -729,7 +730,6 @@ main {
   height: 100%;
   width: 100%; //auto
   overflow-y: auto;
-
 }
 
 .overlay--active {
@@ -739,3 +739,6 @@ main {
   }
 }
 
+.modal__reward.checked .modal__pledge-container {
+  display: flex;
+}
