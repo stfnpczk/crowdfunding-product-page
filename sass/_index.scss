@@ -4,7 +4,6 @@
 
 body {
   background: #fafafa;
-  // overflow: hidden;
 }
 
 .body__overflow {
@@ -14,7 +13,7 @@ body {
 main {
   position: relative;
   top: -58px;
-  margin: 0 24px 0;
+  margin: 0 24px 40px;
 
   @media only screen and (min-width: 800px) {
     max-width: clamp(730px, 93.8303341902vw, 730px);
@@ -27,27 +26,18 @@ main {
       header section
 ----------------------------*/
 .header {
-  display: flex;
-  justify-content: space-between;
-  // align-items: center;
-  // padding: 32px 24px;
   padding: 32px 24px;
   position: relative;
   background: url(../images/image-hero-mobile.jpg) no-repeat;
   background-size: 100%;
-  // background-size: cover;
   height: clamp(236px, 62.9333333333vw, 336px);
-  // align-items: baseline;
-  // height: clamp(236px, 62.9333333333vw, 336px);
 
   @media only screen and (min-width: 800px) {
-    // justify-content: space-around;
     background: url(../images/image-hero-desktop.jpg) no-repeat;
     height: 400px;
-
-    // background-size: 100%;
-    max-width: 1392px;
+    max-width: 1340px;
     margin: 0 auto;
+    padding: 48px 48px 16px ;
   }
 
   &__container {
@@ -62,30 +52,7 @@ main {
     }
   }
 
-  // @media only screen and (min-width: 1440px) {
-  //   padding: 32px 166px;
-  // }
-
   &__navigation {
-    display: none;
-    // display: block;
-    // position: absolute;
-    // top: 88px;
-    // // left: 24px;
-    // width: calc(100% - 48px);
-    // // text-align: center;
-    // background: $white;
-
-    // color: $black;
-    // font-size: 18px;
-    // font-weight: 500;
-    // line-height: 22px;
-
-    // height: 212px;
-    // padding: 24px;
-    // transition: 0.3s ease-in;
-    // z-index: 1;
-
     @media only screen and (min-width: $tablet) {
       display: block;
       font-size: 13px;
@@ -95,14 +62,12 @@ main {
     }
   }
 
-  &__navigation--open {
-    display: block;
-  }
-
   &__nav-items {
-    display: flex;
-    flex-direction: column;
     position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+    width: 100%;
     background: $white;
     left: 24px;
     top: 88px;
@@ -110,6 +75,8 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.0497193);
     border-radius: 8px;
     z-index: 2;
+    transition: all 0.65s ease;
+    overflow: hidden;
 
     @media only screen and (min-width: $tablet) {
       all: unset;
@@ -117,6 +84,12 @@ main {
       display: flex;
       gap: 32px;
     }
+  }
+
+  &__nav-items.open {
+    height: 215px;
+    opacity: 1;
+    visibility: visible;
   }
 
   &__nav-item {
@@ -140,7 +113,9 @@ main {
 
   &__hamburger {
     display: block;
-    position: absolute;
+    position: relative;
+    width: 16px;
+    height: 20px;
     right: 0;
     border: none;
     z-index: 5;
@@ -189,10 +164,6 @@ main {
   }
 }
 
-.header::after {
-  background-image: url(../images/image-hero-mobile.jpg);
-}
-
 /*----------------------------
       intro section 
 ----------------------------*/
@@ -200,7 +171,6 @@ main {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
-  // margin: 0 24px 0;
   padding: 52px 24px 40px;
   position: relative;
   display: flex;
@@ -208,7 +178,6 @@ main {
   align-items: center;
 
   @media only screen and (min-width: $desktop) {
-    // align-items: unset;
     padding: 56px 48px 48px;
   }
 
@@ -270,7 +239,6 @@ main {
       align-items: center;
       background: rgba(47, 47, 47, 0.05);
       border-radius: 33.5px;
-      // width: 174px;
       width: 190px;
     }
   }
@@ -309,7 +277,6 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
   margin: 24px 0 24px;
-  // margin-top: 24px;
   padding: 31px 24px 40px;
   text-align: center;
 
@@ -337,7 +304,6 @@ main {
   }
 
   &__label {
-    // margin: 4px 0 21px;
     margin: 4px 0 0;
   }
 
@@ -463,38 +429,38 @@ main {
 /*----------------------------
       modal section 
 ----------------------------*/
-.modal--show {
-  position: fixed;
+.modal.show {
+  visibility: visible;
 }
 
 .modal {
-  // position: fixed;
+  position: fixed;
+  visibility: hidden;
   top: 0;
-  background: hsla(0, 0%, 0%, 0.5);
-  // min-height: 100vh;
+  left: 0;
   height: 100%;
   width: 100%; //auto
   overflow-y: auto;
+  z-index: 100;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  z-index: 4;
 
   &__form {
-    display: none;
-    // display: block;
+    visibility: hidden;
+    opacity: 0;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.0497193);
     border-radius: 8px;
     padding: 32px 24px;
     margin: 121px 24px 0;
-    // height: 1359px ;
     z-index: 5;
+    transition: all 0.75s ease;
 
     @media only screen and (min-width: $tablet) {
-      margin: 184px clamp(64px, 10vw, 355px) 0;
+      margin: 0px clamp(64px, 10vw, 355px) 0;
+      margin: 120px 45px 0;
       padding: 48px 30px;
     }
 
@@ -509,7 +475,8 @@ main {
   }
 
   &__form--show {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   &__row-container {
@@ -537,6 +504,10 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 32px 0;
+  }
+
+  &__reward.checked &__pledge-container {
+    display: flex;
   }
 
   &__container {
@@ -590,11 +561,10 @@ main {
   }
 
   &__days-left {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22px;
-    color: $black;
-    margin: 24px 0 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $dark-gray;
 
     @media only screen and (min-width: $tablet) {
       grid-column: 2;
@@ -604,11 +574,14 @@ main {
   }
 
   &__days-left span {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
-    color: $dark-gray;
-    margin-left: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $black;
+    margin: 24px 8px 0 0;
+
+    @media only screen and (min-width: $tablet) {
+    }
   }
 
   &__pledge-container {
@@ -616,7 +589,6 @@ main {
     flex-direction: column;
     margin: 24.5px 0 0;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
-    // width: 100%;
 
     @media only screen and (min-width: $tablet) {
       flex-direction: row;
@@ -633,7 +605,6 @@ main {
     @media only screen and (min-width: $tablet) {
       text-align: left;
       margin: 0;
-      // padding: 24px 0 0;
     }
   }
 
@@ -649,7 +620,6 @@ main {
 
   &__input {
     display: flex;
-    // justify-content: center;
     gap: 5px;
     border-radius: 33.5px;
     padding: 11px 2px 11px 24px;
@@ -670,7 +640,6 @@ main {
 
   &__pledge-input {
     border: none;
-    // width: 60%;
     width: 100%;
     font-weight: 700;
   }
@@ -685,21 +654,28 @@ main {
   }
 
   &__success {
-    display: none;
-    // display: flex;
+    visibility: hidden;
+    display: flex;
+    position: fixed;
     flex-direction: column;
     align-items: center;
-    // background: #ffffff;
-    // border: 1px solid rgba(0, 0, 0, 0.0497193);
-    // border-radius: 8px;
     padding: 32px 24px 40.5px;
     margin: 0 24px;
+    top: calc(50% - 121px);
 
     img {
       width: 64px;
     }
 
     max-width: 488px;
+
+    @media only screen and (min-width: $tablet) {
+      top: calc(50% - 184px);
+    }
+  }
+
+  &__success.show {
+    visibility: visible;
   }
 
   &__heading--success {
@@ -723,22 +699,16 @@ main {
 }
 
 .overlay {
-  // position: fixed;
+  position: fixed;
+  visibility: hidden;
   top: 0;
   background: hsla(0, 0%, 0%, 0.5);
-  // min-height: 100vh;
-  height: 100%;
+  min-height: 100%;
   width: 100%; //auto
   overflow-y: auto;
 }
 
 .overlay--active {
   position: fixed;
-  @media only screen and (min-width: $tablet) {
-    position: unset;
-  }
-}
-
-.modal__reward.checked .modal__pledge-container {
-  display: flex;
+  visibility: visible;
 }

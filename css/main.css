@@ -111,12 +111,9 @@ audio:not([controls]) {
  *    user zoom.
  */
 html {
-  font-size: 100%;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
+  font-size: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -139,10 +136,8 @@ a:hover {
  * 2. Improve image quality when scaled in IE 7.
  */
 img {
-  border: 0;
-  /* 1 */
-  -ms-interpolation-mode: bicubic;
-  /* 2 */
+  border: 0; /* 1 */
+  -ms-interpolation-mode: bicubic; /* 2 */
 }
 
 /**
@@ -174,13 +169,10 @@ fieldset {
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
 legend {
-  border: 0;
-  /* 1 */
+  border: 0; /* 1 */
   padding: 0;
-  white-space: normal;
-  /* 2 */
-  *margin-left: -7px;
-  /* 3 */
+  white-space: normal; /* 2 */
+  *margin-left: -7px; /* 3 */
 }
 
 /**
@@ -193,14 +185,10 @@ button,
 input,
 select,
 textarea {
-  font-size: 100%;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  vertical-align: baseline;
-  /* 3 */
-  *vertical-align: middle;
-  /* 3 */
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+  vertical-align: baseline; /* 3 */
+  *vertical-align: middle; /* 3 */
 }
 
 /**
@@ -236,12 +224,9 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-  *overflow: visible;
-  /* 4 */
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+  *overflow: visible; /* 4 */
 }
 
 /**
@@ -260,14 +245,10 @@ html input[disabled] {
  */
 input[type=checkbox],
 input[type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-  *height: 13px;
-  /* 3 */
-  *width: 13px;
-  /* 3 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+  *height: 13px; /* 3 */
+  *width: 13px; /* 3 */
 }
 
 /**
@@ -276,9 +257,7 @@ input[type=radio] {
  *    (include `-moz` to future-proof).
  */
 input[type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */ /* 2 */
   box-sizing: content-box;
 }
 
@@ -305,10 +284,8 @@ input::-moz-focus-inner {
  * 2. Improve readability and alignment in all browsers.
  */
 textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
+  overflow: auto; /* 1 */
+  vertical-align: top; /* 2 */
 }
 
 /**
@@ -459,7 +436,7 @@ body {
 main {
   position: relative;
   top: -58px;
-  margin: 0 24px 0;
+  margin: 0 24px 40px;
 }
 @media only screen and (min-width: 800px) {
   main {
@@ -473,8 +450,6 @@ main {
       header section
 ----------------------------*/
 .header {
-  display: flex;
-  justify-content: space-between;
   padding: 32px 24px;
   position: relative;
   background: url(../images/image-hero-mobile.jpg) no-repeat;
@@ -485,8 +460,9 @@ main {
   .header {
     background: url(../images/image-hero-desktop.jpg) no-repeat;
     height: 400px;
-    max-width: 1392px;
+    max-width: 1340px;
     margin: 0 auto;
+    padding: 48px 48px 16px;
   }
 }
 .header__container {
@@ -501,9 +477,6 @@ main {
     width: unset;
   }
 }
-.header__navigation {
-  display: none;
-}
 @media only screen and (min-width: 700px) {
   .header__navigation {
     display: block;
@@ -513,13 +486,12 @@ main {
     color: white;
   }
 }
-.header__navigation--open {
-  display: block;
-}
 .header__nav-items {
-  display: flex;
-  flex-direction: column;
   position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  height: 0px;
+  width: 100%;
   background: #ffffff;
   left: 24px;
   top: 88px;
@@ -527,6 +499,8 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
   z-index: 2;
+  transition: all 0.65s ease;
+  overflow: hidden;
 }
 @media only screen and (min-width: 700px) {
   .header__nav-items {
@@ -535,6 +509,11 @@ main {
     display: flex;
     gap: 32px;
   }
+}
+.header__nav-items.open {
+  height: 215px;
+  opacity: 1;
+  visibility: visible;
 }
 .header__nav-item {
   font-size: 18px;
@@ -557,7 +536,9 @@ main {
 }
 .header__hamburger {
   display: block;
-  position: absolute;
+  position: relative;
+  width: 16px;
+  height: 20px;
   right: 0;
   border: none;
   z-index: 5;
@@ -594,10 +575,6 @@ main {
 }
 .header__hamburger--active .header__hamburger-icon:before {
   transform: rotate(90deg);
-}
-
-.header::after {
-  background-image: url(../images/image-hero-mobile.jpg);
 }
 
 /*----------------------------
@@ -844,34 +821,38 @@ main {
 /*----------------------------
       modal section 
 ----------------------------*/
-.modal--show {
-  position: fixed;
+.modal.show {
+  visibility: visible;
 }
 
 .modal {
+  position: fixed;
+  visibility: hidden;
   top: 0;
-  background: hsla(0deg, 0%, 0%, 0.5);
+  left: 0;
   height: 100%;
   width: 100%;
   overflow-y: auto;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  z-index: 4;
 }
 .modal__form {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
   padding: 32px 24px;
   margin: 121px 24px 0;
   z-index: 5;
+  transition: all 0.75s ease;
 }
 @media only screen and (min-width: 700px) {
   .modal__form {
-    margin: 184px clamp(64px, 10vw, 355px) 0;
+    margin: 0px clamp(64px, 10vw, 355px) 0;
+    margin: 120px 45px 0;
     padding: 48px 30px;
   }
 }
@@ -887,7 +868,8 @@ main {
   }
 }
 .modal__form--show {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 .modal__row-container {
   display: flex;
@@ -910,6 +892,9 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   padding: 32px 0;
+}
+.modal__reward.checked .modal__pledge-container {
+  display: flex;
 }
 .modal__container {
   padding: 0 24px;
@@ -959,11 +944,10 @@ main {
   }
 }
 .modal__days-left {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  color: #000000;
-  margin: 24px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #7a7a7a;
 }
 @media only screen and (min-width: 700px) {
   .modal__days-left {
@@ -973,11 +957,11 @@ main {
   }
 }
 .modal__days-left span {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #7a7a7a;
-  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #000000;
+  margin: 24px 8px 0 0;
 }
 .modal__pledge-container {
   display: none;
@@ -1044,15 +1028,26 @@ main {
   letter-spacing: 0px;
 }
 .modal__success {
-  display: none;
+  visibility: hidden;
+  display: flex;
+  position: fixed;
   flex-direction: column;
   align-items: center;
   padding: 32px 24px 40.5px;
   margin: 0 24px;
+  top: calc(50% - 121px);
   max-width: 488px;
 }
 .modal__success img {
   width: 64px;
+}
+@media only screen and (min-width: 700px) {
+  .modal__success {
+    top: calc(50% - 184px);
+  }
+}
+.modal__success.show {
+  visibility: visible;
 }
 .modal__heading--success {
   margin: 24px 0;
@@ -1072,24 +1067,18 @@ main {
 }
 
 .overlay {
+  position: fixed;
+  visibility: hidden;
   top: 0;
   background: hsla(0deg, 0%, 0%, 0.5);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow-y: auto;
 }
 
 .overlay--active {
   position: fixed;
-}
-@media only screen and (min-width: 700px) {
-  .overlay--active {
-    position: unset;
-  }
-}
-
-.modal__reward.checked .modal__pledge-container {
-  display: flex;
+  visibility: visible;
 }
 
 .button {
@@ -1101,7 +1090,6 @@ main {
   line-height: 20px;
   color: #ffffff;
   text-align: center;
-  transition: 0.3s ease-in;
 }
 
 button[disabled],

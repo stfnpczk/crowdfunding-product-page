@@ -18,32 +18,35 @@
   <body>
     <div class="page-wrapper">
       <header class="header">
-        <!-- <img src="./images/image-hero-mobile.jpg" alt=""> -->
         <div class="header__container">
-          <a class="header__logo" href="#" aria-label="Return to home">
+          <div class="header__logo" href="#" aria-label="Return to home">
             <img src="./images/logo.svg" alt="" />
-          </a>
-          <button
-            class="header__hamburger"
-            id="hamburger"
-            aria-label="open navigation menu"
-          >
-            <span class="header__hamburger-icon"></span>
-          </button>
+          </div>
+
+          <nav class="header__navigation" id="mobile-nav">
+            <button
+              class="header__hamburger"
+              id="hamburger"
+              aria-label="open navigation menu"
+            >
+              <span class="header__button-container" id="hamham">
+                <span class="header__hamburger-icon"></span>
+              </span>
+            </button>
+
+            <ul class="header__nav-items">
+              <li class="header__nav-item">
+                <a class="header__link" href="#">About</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__link" href="#">Discover</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__link" href="#">Get Started</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav class="header__navigation" id="mobile-nav">
-          <ul class="header__nav-items">
-            <li class="header__nav-item">
-              <a class="header__link" href="#">About</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__link" href="#">Discover</a>
-            </li>
-            <li class="header__nav-item">
-              <a class="header__link" href="#">Get Started</a>
-            </li>
-          </ul>
-        </nav>
       </header>
 
       <main>
@@ -79,13 +82,13 @@
         <section class="stats">
           <ul class="stats__container">
             <li>
-              <h2 class="stats__heading">$89,914</h2>
+              <h2 class="stats__heading" id="totalPledgeAmount">$89,914</h2>
               <p class="stats__label">of $100,000 backed</p>
               <hr class="stats__transition" />
             </li>
 
             <li>
-              <h2 class="stats__heading">5,007</h2>
+              <h2 class="stats__heading" id="totalBackers">5,007</h2>
               <p class="stats__label">total backers</p>
               <hr class="stats__transition" />
             </li>
@@ -128,7 +131,7 @@
               </p>
               <div class="about__row--two">
                 <div class="about__items-left">
-                  <span class="about__quantity">101</span>
+                  <span class="about__quantity quantity-bamboo">101</span>
                   <span class="about__left">left</span>
                 </div>
                 <button class="button about__button select">
@@ -149,7 +152,7 @@
               </p>
               <div class="about__row--two">
                 <div class="about__items-left">
-                  <span class="about__quantity">64</span>
+                  <span class="about__quantity quantity-black">64</span>
                   <span class="about__left">left</span>
                 </div>
                 <button class="button about__button select">
@@ -199,7 +202,7 @@
           </p>
 
           <ul class="modal__reward-container">
-            <li class="modal__reward">
+            <li class="modal__reward" data-reward="noReward">
               <div class="modal__container">
                 <div class="modal__description">
                   <input
@@ -233,12 +236,17 @@
                       min="1"
                     />
                   </label>
-                  <button class="button modal__button-pledge">Continue</button>
+                  <button
+                    class="button modal__button-pledge"
+                    data-left="noReward"
+                  >
+                    Continue
+                  </button>
                 </div>
               </div>
             </li>
 
-            <li class="modal__reward">
+            <li class="modal__reward" data-reward="bamboo">
               <div class="modal__container">
                 <div class="modal__description">
                   <input
@@ -256,7 +264,9 @@
                   helped us launch our promotional campaign, and you’ll be added
                   to a special Backer member list.
                 </p>
-                <p class="modal__days-left">101 <span>left</span></p>
+                <p class="modal__days-left">
+                  <span class="quantity-bamboo">101</span> left
+                </p>
               </div>
 
               <div class="modal__pledge-container">
@@ -273,12 +283,17 @@
                       min="75"
                     />
                   </label>
-                  <button class="button modal__button-pledge">Continue</button>
+                  <button
+                    class="button modal__button-pledge"
+                    data-left="bamboo"
+                  >
+                    Continue
+                  </button>
                 </div>
               </div>
             </li>
 
-            <li class="modal__reward">
+            <li class="modal__reward" data-reward="black">
               <div class="modal__container">
                 <div class="modal__description">
                   <input
@@ -296,7 +311,9 @@
                   thank you. You’ll be added to our Backer member list. Shipping
                   is included.
                 </p>
-                <p class="modal__days-left">64 <span>left</span></p>
+                <p class="modal__days-left">
+                  <span class="quantity-black">64</span>left
+                </p>
               </div>
 
               <div class="modal__pledge-container">
@@ -313,7 +330,9 @@
                       min="75"
                     />
                   </label>
-                  <button class="button modal__button-pledge">Continue</button>
+                  <button class="button modal__button-pledge" data-left="black">
+                    Continue
+                  </button>
                 </div>
               </div>
             </li>
@@ -338,7 +357,7 @@
                   list. Shipping is included.
                 </p>
 
-                <p class="modal__days-left">0 <span>left</span></p>
+                <p class="modal__days-left"><span>0</span>left</p>
               </div>
             </li>
           </ul>
