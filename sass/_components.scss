@@ -1,12 +1,12 @@
 // reusable components
 
 .button {
-  border-radius: 33.5px;
+  border-radius: 2.0938rem;
   display: inline-flex;
   justify-content: center;
   align-items: center; //
   font-weight: 700;
-  line-height: 20px;
+  line-height: 1.25rem;
   color: $white;
   text-align: center;
 }
@@ -18,8 +18,8 @@ html input[disabled] {
 
 .card {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.0497193);
-  border-radius: 8px;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 0.5rem;
 }
 
 

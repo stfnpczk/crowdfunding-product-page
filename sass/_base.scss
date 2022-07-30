@@ -5,8 +5,8 @@ $moderate-cyan: #3cb3ab;
 $dark-cyan: #147a73;
 $dark-gray: #7a7a7a;
 
-$tablet: 700px;
-$desktop: 778px;
+$tablet: 43.75rem;
+$desktop: 48.625rem;
 
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
 
@@ -29,13 +29,13 @@ h6 {
 }
 
 p {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: $dark-gray;
 
   @media only screen and (min-width: $desktop) {
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 1rem;
+    line-height: 1.875rem;
   }
 }
 
@@ -59,9 +59,9 @@ input[type="radio"] {
   margin: 0;
   color: rgb(0, 0, 0, 0.15);
   // font: inherit;
-  width: 24px;
-  height: 24px;
-  border: 1px solid rgba(0,0,0,0.15);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.0625rem solid rgba(0,0,0,0.15);
   border-radius: 50%;
   display: grid;
   place-content: center;
@@ -70,12 +70,12 @@ input[type="radio"] {
 
 input[type="radio"]::before {
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 12px 12px hsla(176, 50%, 47%, 1);
+  box-shadow: inset 0.75rem 0.75rem hsla(176, 50%, 47%, 1);
 }
 
 input[type="radio"]:checked::before {
