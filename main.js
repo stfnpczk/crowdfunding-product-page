@@ -124,16 +124,20 @@ const updateQuantity = (button) => {
 };
 
 const successModal = document.querySelector(".modal__success");
+const successButton = document.querySelector(".modal__button--success");
 
 const displaySuccessModal = () => {
   form.classList.remove("modal__form--show");
   successModal.classList.add("show");
 };
 
-const successButton = document.querySelector(".modal__button--success");
-successButton.addEventListener("click", () => {
+const closeSuccessModal = () => {
   closeModal();
   successModal.classList.remove("show");
+};
+
+successButton.addEventListener("click", () => {
+  closeSuccessModal();
 });
 
 pledgeButtons.forEach((button) => {
@@ -150,10 +154,13 @@ pledgeButtons.forEach((button) => {
   });
 });
 
+//close modals with esc or outside click
 document.addEventListener("keydown", (event) => {
   if (event.key == "Escape" && overlay.classList.contains("overlay--active")) {
     if (navItems.classList.contains("open")) {
       toggleNavigation();
+    } else if (successModal.classList.contains("show")) {
+      closeSuccessModal();
     }
     closeModal();
   }
@@ -162,6 +169,8 @@ document.addEventListener("keydown", (event) => {
 modal.addEventListener("click", (event) => {
   if (event.target !== event.currentTarget) {
     return;
+  } else if (successModal.classList.contains("show")) {
+    closeSuccessModal();
   } else {
     closeModal();
   }
