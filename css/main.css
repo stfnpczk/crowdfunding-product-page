@@ -635,7 +635,6 @@ main {
   }
 }
 .intro__button-cyan {
-  background: #3cb3ab;
   width: 57.0666666667vw;
   font-size: 16px;
   padding: 18px 0;
@@ -652,6 +651,7 @@ main {
     background: rgba(47, 47, 47, 0.05);
     border-radius: 33.5px;
     width: 190px;
+    transition: 0.3s ease;
   }
 }
 .intro__bookmark--set .intro__bookmark-txt {
@@ -803,7 +803,6 @@ main {
   color: #7a7a7a;
 }
 .about__button {
-  background: #3cb3ab;
   width: clamp(157px, 41.8666666667vw, 41.8666666667vw);
   font-size: 14px;
   padding: 14px 0;
@@ -893,6 +892,9 @@ main {
   border-radius: 8px;
   padding: 32px 0;
 }
+.modal__reward.checked {
+  border: 2px solid #3cb3ab;
+}
 .modal__reward.checked .modal__pledge-container {
   display: flex;
 }
@@ -917,6 +919,11 @@ main {
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
+}
+.modal__label:hover {
+  color: #3cb3ab;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .modal__label span {
   display: block;
@@ -1014,6 +1021,9 @@ main {
   font-weight: 700;
   line-height: 17px;
 }
+.modal__input:focus-within {
+  border: 1px solid #3cb3ab;
+}
 .modal__pledge-input {
   border: none;
   width: 100%;
@@ -1026,6 +1036,10 @@ main {
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0px;
+  transition: 0.3s ease;
+}
+.modal__button-pledge:hover {
+  background: #147a73;
 }
 .modal__success {
   visibility: hidden;
@@ -1065,6 +1079,9 @@ main {
   line-height: 17px;
   text-align: center;
 }
+.modal__button--success:hover {
+  background: #147a73;
+}
 
 .overlay {
   position: fixed;
@@ -1101,4 +1118,13 @@ html input[disabled] {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
+}
+
+.select {
+  background: #3cb3ab;
+  transition: 0.3s ease;
+}
+
+.select:hover {
+  background: #147a73;
 }

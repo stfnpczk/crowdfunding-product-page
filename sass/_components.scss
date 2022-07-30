@@ -21,3 +21,13 @@ html input[disabled] {
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
 }
+
+
+.select {
+  background: $moderate-cyan ;
+  transition: 0.3s ease;
+}
+
+.select:hover {
+  background: $dark-cyan;
+}

@@ -223,7 +223,6 @@ main {
   }
 
   &__button-cyan {
-    background: $moderate-cyan;
     width: clamp(57.0666666667vw, 57.0666666667vw, 57.0666666667vw);
     font-size: 16px;
     padding: 18px 0;
@@ -240,6 +239,7 @@ main {
       background: rgba(47, 47, 47, 0.05);
       border-radius: 33.5px;
       width: 190px;
+      transition: 0.3s ease;
     }
   }
 
@@ -410,7 +410,6 @@ main {
   }
 
   &__button {
-    background: $moderate-cyan;
     width: clamp(157px, 41.8666666667vw, 41.8666666667vw);
     font-size: 14px;
     padding: 14px 0;
@@ -505,6 +504,11 @@ main {
     border-radius: 8px;
     padding: 32px 0;
   }
+  
+  &__reward.checked {
+    border: 2px solid $moderate-cyan;
+  }
+  
 
   &__reward.checked &__pledge-container {
     display: flex;
@@ -533,6 +537,13 @@ main {
     font-size: 14px;
     font-weight: 700;
     line-height: 17px;
+  }
+
+  &__label:hover {
+    color: $moderate-cyan;
+    cursor: pointer;
+    transition: 0.3s;
+    
   }
 
   &__label span {
@@ -638,6 +649,10 @@ main {
     }
   }
 
+  &__input:focus-within {
+    border: 1px solid $moderate-cyan;
+  }
+
   &__pledge-input {
     border: none;
     width: 100%;
@@ -651,6 +666,10 @@ main {
     font-weight: 700;
     line-height: 17px;
     letter-spacing: 0px;
+    transition: 0.3s ease;
+  }
+  &__button-pledge:hover {
+    background: $dark-cyan;
   }
 
   &__success {
@@ -696,6 +715,11 @@ main {
     line-height: 17px;
     text-align: center;
   }
+
+  &__button--success:hover {
+    background: $dark-cyan;
+  }
+
 }
 
 .overlay {
