@@ -28,14 +28,14 @@ bookmark.addEventListener("click", toggleBookmark);
 
 // display/close select modal
 modal = document.getElementById("modal");
-form = document.getElementById("form");
+formContainer = document.getElementById("forms");
 selectButtons = document.querySelectorAll(".select");
 closeButton = document.getElementById("close-button");
 
 //?? DRY
 const displayModal = () => {
   document.body.classList.add("body__overflow");
-  form.classList.add("modal__form--show");
+  formContainer.classList.add("modal__form--show");
   modal.classList.add("show");
   overlay.classList.add("overlay--active");
 };
@@ -45,7 +45,7 @@ selectButtons.forEach((button) => {
 
 const closeModal = () => {
   document.body.classList.remove("body__overflow");
-  form.classList.remove("modal__form--show");
+  formContainer.classList.remove("modal__form--show");
   modal.classList.remove("show");
   overlay.classList.remove("overlay--active");
 };
@@ -72,13 +72,13 @@ radioButtons.forEach((radio) => {
 const totalPledgeAmount = document.getElementById("totalPledgeAmount");
 const totalBackers = document.getElementById("totalBackers");
 const pledgeButtons = document.querySelectorAll(".modal__button-pledge");
+const forms = document.querySelectorAll(".modal__pledge-container");
 const progressBar = document.querySelector(".stats__pb-value");
 
 const statsData = {
   totalPledges: 88914,
   pledgeGoal: 100000,
   totalBackers: 5007,
-  daysLeft: 56,
 
   rewardsLeft: {
     bamboo: 101,
@@ -108,15 +108,15 @@ const updateDOM = () => {
   progressBar.style.width = `${updateProgressBar(statsData.totalPledges)}%`;
 };
 
-const updateQuantity = (button) => {
+const updateQuantity = (form) => {
   let quantityLeft = parseInt(
-    document.querySelector(`.quantity-${button.dataset.left}`).innerHTML
+    document.querySelector(`.quantity-${form.dataset.left}`).innerHTML
   );
 
   if (quantityLeft > 0) {
     quantityLeft--;
     document
-      .querySelectorAll(`.quantity-${button.dataset.left}`)
+      .querySelectorAll(`.quantity-${form.dataset.left}`)
       .forEach((quantity) => {
         quantity.innerHTML = quantityLeft;
       });
@@ -127,7 +127,7 @@ const successModal = document.querySelector(".modal__success");
 const successButton = document.querySelector(".modal__button--success");
 
 const displaySuccessModal = () => {
-  form.classList.remove("modal__form--show");
+  formContainer.classList.remove("modal__form--show");
   successModal.classList.add("show");
 };
 
@@ -140,13 +140,13 @@ successButton.addEventListener("click", () => {
   closeSuccessModal();
 });
 
-pledgeButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
+forms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
-    statsData.totalPledges += getPledgeInput(button);
+    statsData.totalPledges += getPledgeInput(form);
     statsData.totalBackers += 1;
-    if (button.dataset.left != "noReward") {
-      updateQuantity(button);
+    if (form.dataset.left != "noReward") {
+      updateQuantity(form);
     }
 
     updateDOM();

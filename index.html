@@ -189,12 +189,7 @@
       </main>
 
       <div class="modal" id="modal">
-        <form
-          class="modal__form"
-          id="form"
-          action="#"
-          onkeydown="return event.key != 'Enter';"
-        >
+        <div class="modal__form" id="forms">
           <div class="modal__row-container">
             <h3 class="modal__heading">Back this project</h3>
             <button id="close-button">
@@ -227,7 +222,7 @@
                 </p>
               </div>
 
-              <div class="modal__pledge-container">
+              <form class="modal__pledge-container" data-left="noReward">
                 <p class="modal__text">Enter your pledge</p>
 
                 <div class="modal__inputs">
@@ -239,16 +234,14 @@
                       id="amount-noReward"
                       value="5"
                       min="1"
+                      required
                     />
                   </label>
-                  <button
-                    class="button modal__button-pledge"
-                    data-left="noReward"
-                  >
+                  <button class="button modal__button-pledge" type="submit">
                     Continue
                   </button>
                 </div>
-              </div>
+              </form>
             </li>
 
             <li class="modal__reward" data-reward="bamboo">
@@ -274,7 +267,7 @@
                 </p>
               </div>
 
-              <div class="modal__pledge-container">
+              <form class="modal__pledge-container" data-left="bamboo">
                 <p class="modal__text">Enter your pledge</p>
 
                 <div class="modal__inputs">
@@ -284,18 +277,16 @@
                       class="modal__pledge-input"
                       type="number"
                       id="amount-bamboo"
-                      value="75"
-                      min="75"
+                      value="25"
+                      min="25"
+                      required
                     />
                   </label>
-                  <button
-                    class="button modal__button-pledge"
-                    data-left="bamboo"
-                  >
+                  <button class="button modal__button-pledge" type="submit">
                     Continue
                   </button>
                 </div>
-              </div>
+              </form>
             </li>
 
             <li class="modal__reward" data-reward="black">
@@ -321,13 +312,14 @@
                 </p>
               </div>
 
-              <div class="modal__pledge-container">
+              <form class="modal__pledge-container" data-left="black">
                 <p class="modal__text">Enter your pledge</p>
 
                 <div class="modal__inputs">
                   <label for="amount-black" class="modal__input">
                     <span>$</span>
                     <input
+                      required
                       class="modal__pledge-input"
                       type="number"
                       id="amount-black"
@@ -335,11 +327,11 @@
                       min="75"
                     />
                   </label>
-                  <button class="button modal__button-pledge" data-left="black">
+                  <button class="button modal__button-pledge" type="submit">
                     Continue
                   </button>
                 </div>
-              </div>
+              </form>
             </li>
 
             <li class="modal__reward modal__reward--disabled">
@@ -349,6 +341,7 @@
                     class="modal__radio-button"
                     type="radio"
                     id="mahogany"
+                    min="200"
                     disabled
                   />
                   <label class="modal__label" for="mahogany"
@@ -366,7 +359,7 @@
               </div>
             </li>
           </ul>
-        </form>
+        </div>
         <div class="card modal__success">
           <img src="./images/icon-check.svg" alt="" />
           <h3 class="modal__heading modal__heading--success">
