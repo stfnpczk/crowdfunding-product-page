@@ -456,13 +456,17 @@ main {
   background-size: 100%;
   height: clamp(14.75rem, 62.9333333333vw, 21rem);
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 43.75rem) {
   .header {
     background: url(../images/image-hero-desktop.jpg) no-repeat;
     height: 25rem;
-    max-width: 83.75rem;
     margin: 0 auto;
-    padding: 3rem 3rem 1rem;
+    padding: 3rem 50px 1rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .header {
+    background-position: top center;
   }
 }
 .header__container {
@@ -475,6 +479,8 @@ main {
 @media only screen and (min-width: 43.75rem) {
   .header__container {
     width: unset;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 }
 @media only screen and (min-width: 43.75rem) {
@@ -687,6 +693,11 @@ main {
   padding: 1.9375rem 1.5rem 2.5rem;
   text-align: center;
 }
+@media only screen and (min-width: 48.625rem) {
+  .stats {
+    padding: 3rem;
+  }
+}
 .stats__container {
   display: flex;
   flex-direction: column;
@@ -740,6 +751,22 @@ main {
 .about {
   padding: 2.5rem 1.5rem;
 }
+@media only screen and (min-width: 48.625rem) {
+  .about {
+    padding: 3rem;
+  }
+}
+.about__heading {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media only screen and (min-width: 43.75rem) {
+  .about__heading {
+    font-family: Commissioner;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
 .about__paragraph {
   margin: 1.5rem 0 1.25rem;
 }
@@ -767,6 +794,12 @@ main {
   font-size: 0.875rem;
   line-height: 1.0625rem;
 }
+@media only screen and (min-width: 43.75rem) {
+  .about__heading--four {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
 .about__pledge {
   font-size: 0.875rem;
   font-weight: 500;
@@ -776,6 +809,8 @@ main {
 }
 @media only screen and (min-width: 43.75rem) {
   .about__pledge {
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
     margin: 0 0 1.5rem;
   }
 }

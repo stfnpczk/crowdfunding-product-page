@@ -61,7 +61,7 @@ input[type="radio"] {
   // font: inherit;
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.0625rem solid rgba(0,0,0,0.15);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.15);
   border-radius: 50%;
   display: grid;
   place-content: center;
@@ -82,8 +82,6 @@ input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
-
-
 input[type="text"]:focus {
-	border: none;
+  border: none;
 }

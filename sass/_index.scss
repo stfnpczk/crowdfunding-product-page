@@ -32,12 +32,15 @@ main {
   background-size: 100%;
   height: clamp(14.75rem, 62.9333333333vw, 21rem);
 
-  @media only screen and (min-width: 50rem) {
+  @media only screen and (min-width: $tablet) {
     background: url(../images/image-hero-desktop.jpg) no-repeat;
     height: 25rem;
-    max-width: 83.75rem;
     margin: 0 auto;
-    padding: 3rem 3rem 1rem ;
+    padding: 3rem 50px 1rem;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    background-position: top center;
   }
 
   &__container {
@@ -49,6 +52,8 @@ main {
 
     @media only screen and (min-width: $tablet) {
       width: unset;
+      max-width: 1100px;
+      margin: 0 auto;
     }
   }
 
@@ -163,6 +168,18 @@ main {
     transform: rotate(90deg);
   }
 }
+
+// .header::after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 40%);
+//   max-width: 83.75rem;
+//   width: 100%;
+//   height: 100%;
+// }
 
 /*----------------------------
       intro section 
@@ -280,6 +297,10 @@ main {
   padding: 1.9375rem 1.5rem 2.5rem;
   text-align: center;
 
+  @media only screen and (min-width: $desktop) {
+    padding: 3rem;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -338,6 +359,21 @@ main {
 .about {
   padding: 2.5rem 1.5rem;
 
+  @media only screen and (min-width: $desktop) {
+    padding: 3rem;
+  }
+
+  &__heading {
+    font-size: 18px;
+    line-height: 22px;
+
+    @media only screen and (min-width: $tablet) {
+      font-family: Commissioner;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
   &__paragraph {
     margin: 1.5rem 0 1.25rem;
   }
@@ -369,6 +405,11 @@ main {
   &__heading--four {
     font-size: 0.875rem;
     line-height: 1.0625rem;
+
+    @media only screen and (min-width: $tablet) {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+    }
   }
 
   &__pledge {
@@ -379,6 +420,9 @@ main {
     margin: 0.5rem 0 1.5rem;
 
     @media only screen and (min-width: $tablet) {
+      font-size: 0.9375rem;
+      line-height: 1.125rem;
+
       margin: 0 0 1.5rem;
     }
   }
@@ -504,11 +548,10 @@ main {
     border-radius: 0.5rem;
     padding: 2rem 0;
   }
-  
+
   &__reward.checked {
     border: 0.125rem solid $moderate-cyan;
   }
-  
 
   &__reward.checked &__pledge-container {
     display: flex;
@@ -543,7 +586,6 @@ main {
     color: $moderate-cyan;
     cursor: pointer;
     transition: 0.3s;
-    
   }
 
   &__label span {
@@ -719,7 +761,6 @@ main {
   &__button--success:hover {
     background: $dark-cyan;
   }
-
 }
 
 .overlay {
